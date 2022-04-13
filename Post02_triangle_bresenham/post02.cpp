@@ -149,6 +149,8 @@ void drawObject()
 	// set warna obyek ke warna biru (0.0f, 0.0f, 1.0f)
 	glColor3f(0.0f, 0.0f, 1.0f);
 
+	/*
+	// Versi Garis Lurus
 	// sisi miring kanan
 	Vec3 point1 = Vec3(0.0f, 120.0f, 0.0f);
 	Vec3 point2 = Vec3(120.0f, -120.0f, 0.0f);
@@ -161,6 +163,42 @@ void drawObject()
 	point1 = Vec3(120.0f, -120.0f, 0.0f);
 	point2 = Vec3(-120.0f, -120.0f, 0.0f);
 	lineBresenham(point1, point2);
+	*/
+
+
+	
+	// Versi garis putus-putus
+	// sisi miring kanan
+	Vec3 point11 = Vec3(2.0f, 116.0f, 0.0f);
+	Vec3 point12 = Vec3(32.0f, 56.0f, 0.0f);
+	Vec3 point13 = Vec3(62.0f, -4.0f, 0.0f);
+	Vec3 point14 = Vec3(92.0f, -64.0f, 0.0f);
+	Vec3 point21 = Vec3(28.0f, 64.0f, 0.0f);
+	Vec3 point22 = Vec3(58.0f, 4.0f, 0.0f);
+	Vec3 point23 = Vec3(88.0f, -56.0f, 0.0f);
+	Vec3 point24 = Vec3(118.0f, -116.0f, 0.0f);
+	lineBresenham(point11, point21);
+	lineBresenham(point12, point22);
+	lineBresenham(point13, point23);
+	lineBresenham(point14, point24);
+	// sisi miring kiri
+	point11 = Vec3(-2.0f, 116.0f, 0.0f);
+	point12 = Vec3(-32.0f, 56.0f, 0.0f);
+	point13 = Vec3(-62.0f, -4.0f, 0.0f);
+	point14 = Vec3(-92.0f, -64.0f, 0.0f);
+	point21 = Vec3(-28.0f, 64.0f, 0.0f);
+	point22 = Vec3(-58.0f, 4.0f, 0.0f);
+	point23 = Vec3(-88.0f, -56.0f, 0.0f);
+	point24 = Vec3(-118.0f, -116.0f, 0.0f);
+	lineBresenham(point11, point21);
+	lineBresenham(point12, point22);
+	lineBresenham(point13, point23);
+	lineBresenham(point14, point24);
+	// alas
+	point11 = Vec3(110.0f, -116.0f, 0.0f);
+	point21 = Vec3(-110.0f, -116.0f, 0.0f);
+	lineBresenham(point11, point21);
+	
 	glPopMatrix();
 	glPopMatrix();
 }
@@ -189,7 +227,7 @@ void display()
 void init(void)
 {
 	// inisialisasi warna latar belakang layar dalam hal ini warna putih (1.0, 1.0, 1.0, 0.0)
-	glClearColor(0.0, 0.0, 0.0, 0.0);
+	glClearColor(1.0, 1.0, 1.0, 0.0);
 	glEnable(GL_DEPTH_TEST);				// mengaktifkan depth buffer
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
